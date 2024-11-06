@@ -6,12 +6,13 @@ import org.springframework.stereotype.Component;
 @Component("ComercialExperimentado")
 public class ComercialExperimentado implements Empleados{
 	
+	@Autowired
 	private CreacionInformeFinanciero informeFinanciero;
 	
-	@Autowired
+	/*@Autowired
 	public ComercialExperimentado(CreacionInformeFinanciero informeFinanciero) {
 		this.informeFinanciero = informeFinanciero;
-	}
+	}*/
 
 	@Override
 	public String getTareas() {
@@ -24,6 +25,16 @@ public class ComercialExperimentado implements Empleados{
 		// TODO Auto-generated method stub
 		return informeFinanciero.getInformeFinanciero();
 	}
+
+	public CreacionInformeFinanciero getInformeFinanciero() {
+		return informeFinanciero;
+	}
+
+	//@Autowired
+	public void setInformeFinanciero(CreacionInformeFinanciero informeFinanciero) {
+		this.informeFinanciero = informeFinanciero;
+	}
+	
 	
 
 }
