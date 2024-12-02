@@ -1,12 +1,14 @@
 package com.thefundidorsc.pruebaannotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("ComercialExperimentado")
 public class ComercialExperimentado implements Empleados{
 	
 	@Autowired
+	@Qualifier("informeFinancieroTrim2")
 	private CreacionInformeFinanciero informeFinanciero;
 	
 	/*@Autowired
