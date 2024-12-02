@@ -1,11 +1,28 @@
 package com.thefundidorsc.pruebaannotations;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.xml.transform.Source;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("ComercialExperimentado")
 public class ComercialExperimentado implements Empleados{
+	
+	//ejecución de código después de creación del Bean
+	@PostConstruct
+	public void ejecutaDespuesCreación() {
+		System.out.println("Ejecutado tras creación de Bean");
+	}
+	
+	
+	//ejecución de código después de apagado contenedor Spring
+	@PreDestroy
+	public void ejecutaAntesDestruccion() {
+		System.out.println("Ejecutando antes destrucción");
+	}
 	
 	@Autowired
 	@Qualifier("informeFinancieroTrim2")
